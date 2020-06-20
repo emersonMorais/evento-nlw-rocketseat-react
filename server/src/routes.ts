@@ -33,7 +33,7 @@ routes.post(
     }),
 
   }, {
-    abortEarly: false;
+    abortEarly: false
   }),
   pointsController.create
 );
