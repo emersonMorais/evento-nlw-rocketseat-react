@@ -22,6 +22,7 @@ interface Data {
   point: {
     image: string;
     name: string;
+    image_url: string;
     email: string;
     whatsapp: string;
     city: string;
@@ -76,7 +77,7 @@ const Detail = () => {
         <Image
           style={styles.pointImage}
           source={{
-            uri: data.point.image,
+            uri: data.point.image_url,
           }}
         ></Image>
 
@@ -93,7 +94,7 @@ const Detail = () => {
         </View>
       </View>
       <View style={styles.footer}>
-        <RectButton style={styles.button} onPress={handleWhatsapp}>
+        <RectButton style={styles.button} onPress={handleWhatsapp} >
           <FontAwesome name="whatsapp" size={20} color="#FFF" />
           <Text style={styles.buttonText}>Whatsapp</Text>
         </RectButton>

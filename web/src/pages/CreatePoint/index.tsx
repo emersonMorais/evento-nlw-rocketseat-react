@@ -4,6 +4,8 @@ import { FiArrowLeft } from "react-icons/fi";
 import { Map, TileLayer, Marker } from "react-leaflet";
 import api from "../../services/api";
 
+import Dropzone from "../../components/Dropzone/index";
+
 import "./styles.css";
 
 import logo from "../../assets/logo.svg";
@@ -47,6 +49,8 @@ const CreatePonint = () => {
     0,
     0,
   ]);
+
+  const [selectedFile, setSelectedFile] = useState<File>();
 
   const history = useHistory();
 
@@ -124,7 +128,9 @@ const CreatePonint = () => {
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
-
+    console.log(selectedFile);
+    
+    
     const { name, email, whatsapp } = formData;
     const uf = selectedUf;
     const city = selectedCity;
@@ -140,11 +146,11 @@ const CreatePonint = () => {
       longitude,
       items,
     };
-    await api.post('points', data)
+    await api.post("points", data);
 
-    alert('Ponto de coleta Criado'); 
+    alert("Ponto de coleta Criado");
 
-    history.push('/');
+    history.push("/");
   }
 
   return (
@@ -160,6 +166,7 @@ const CreatePonint = () => {
       <form onSubmit={handleSubmit}>
         <h1>
           Cadastro do <br /> ponto de coleta
+          <Dropzone onFileUploaded={setSelectedFile}/>
         </h1>
 
         <fieldset>
