@@ -1,6 +1,6 @@
 import Knex from "knex";
-
-export async function up(knex: Knex) {
+//entidades são as tabelas criadas no banco
+'export async function up(knex: Knex) {
   return knex.schema.createTable("points", (table) => {
     table.increments("id").primary();
     table.string("image").notNullable();

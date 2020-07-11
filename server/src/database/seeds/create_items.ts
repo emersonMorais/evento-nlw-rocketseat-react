@@ -1,5 +1,6 @@
 import Knex from 'knex';
 
+//Popula a base de dados com dados padrão
 export async function seed(knex: Knex){
    await knex('items').insert([
     {title:'Lâmpadas', image: 'lampadas.svg'}, 

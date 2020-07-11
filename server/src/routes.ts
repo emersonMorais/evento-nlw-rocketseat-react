@@ -6,6 +6,7 @@ import multerConfig from "./config/multer";
 import PointsController from "./controllers/PointsController";
 import ItemsController from "./controllers/ItemsController";
 
+// desacopla as rotas do arquivo principal
 const routes = express.Router();
 const upload = multer(multerConfig);
 

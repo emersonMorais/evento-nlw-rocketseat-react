@@ -1,5 +1,9 @@
 import Knex from 'knex';
 
+/**
+ * Tabela pivot em um realcionamento N-N 
+ * Relacionamento dos itens coletados em um ponto de coleta
+ */
 export async function up(knex: Knex) {
   return knex.schema.createTable('point_items', (table) => {
     table.increments('id').primary();
